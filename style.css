@@ -1,0 +1,136 @@
+.myStyle {
+            border: 1px solid black;
+            padding: 10px;
+        }
+
+        .myStyle2 {
+            border: 1px solid black;
+        }
+
+        .myStyle3 {
+            text-align: right;
+            color: #BA4242;
+        }
+
+        .myStyle4 {
+            width: 114px;
+        }
+
+        .myStyle5 {
+            width: 97px;
+        }
+        .myStyle6{
+            padding-top: 10px;
+            font-size: 1em;
+        }
+        .myStyle7 {
+            text-align: right;
+            color: white;
+        }
+        .blackNav{
+            background-color: black;
+            color: white;
+            padding-top: 10px;
+        }
+        .greyNav{
+            text-align: center;
+            background-color: #DFDFDF;
+            color: black;
+            font-size: 0.7em;
+            font-weight: bold;
+            padding-top: 10px;
+        }
+        img.nav{
+            width: 100%;
+        }
+        img.nav2{
+            width: 8%;
+        }
+        img.nav3{
+            width: 15%;
+        }
+        img.nav4{
+            display: block;
+            margin-left: auto;
+            width: 70%;
+        }
+        img.bestSeller, img.justArrived{
+            width: 100%;
+            height: 400px;
+        }
+        div.group{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            width: 80%;
+        }
+        p.heading{
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+        img.explore{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 15%;
+        }
+        .brandAndSearch{
+            padding-bottom: 30px;
+        }
+        img.preFooter{
+            width: 50%;
+            height: 25px;
+        }
+        .footerImg{
+            width: 80%
+        }
+        .footerHeading{
+            padding-top: 10%;
+        }
+        .footerHeading2{
+            padding-top: 5%;
+        }
+        .footer{
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+.mobile-menu{
+    padding-top: 10px;
+    width: 60%;
+}
+.shop-mobile{
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+img.brands-mobile{
+    display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 35%;
+    padding-top: 20px;
+}
+
+img.download-app-mobile{
+    display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 75%;
+    padding-top: 20px;
+}
+.mobile{
+    text-align: center;
+}
+.disclaimer{
+    position: fixed;
+    bottom: 0;
+    background-color: beige;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    
+}

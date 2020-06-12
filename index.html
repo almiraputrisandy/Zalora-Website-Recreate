@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+    <title>Credit Task 3 Component 2</title>
+    <meta name="viewport" content="width=device-width, initialscale=1.0" />
+    <!-- Bootstrap -->
+    <link href="bootstrap-3.4.1-dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+ <script src="js/html5shiv.js"></script>
+ <script src="js/respond.min.js"></script>
+ <![endif]-->
+</head>
+
+<body data-ng-controller="myCtrl">
+    <div class="container">
+        <div class="row blackNav">
+            <div class="col-xs-4 col-md-4">
+                <div class="row hidden-md hidden-lg">
+                    <div class="col-xs-6" data-ng-repeat="item in leftImgMobile">
+                        <p><img data-ng-src="{{ getImage(item.id) }}" class="img-responsive mobile-menu" src="#" alt="banner" /></p>
+                    </div>
+                </div>
+                <div class="row hidden-xs hidden-sm hidden-sm">
+                    <div class="col-md-6">
+                        <p><img data-ng-src="{{ getImage(1) }}" class="img-responsive nav" src="#" alt="banner" /></p>
+                    </div>
+                    <div class="col-md-3 myStyle" data-ng-repeat="n in mainNav">
+                        <p>{{n}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden-xs hidden-sm col-md-6 myStyle2">
+                <p><img data-ng-src="{{ getImage(2) }}" class="img-responsive nav" alt="search bar" src="#"/></p>
+            </div>
+            <div class="hidden-md hidden-lg col-xs-4 myStyle">
+                <p><img data-ng-src="{{ getImage(1) }}" class="img-responsive nav" alt="banner" src="#"/></p>
+            </div>
+            <div class="col-xs-4 col-md-2">
+                <div class="row hidden-md hidden-lg">
+                    <div class="col-xs-6"  data-ng-repeat="item in rightImgMobile">
+                        <p><img data-ng-src="{{ getImage(item.id) }}" class="img-responsive mobile-menu" alt="banner" src="#"/></p>
+                    </div>
+                </div>
+                <div class="row hidden-xs hidden-sm">
+                    <div class="col-xs-4 col-md-4 myStyle" data-ng-repeat="i in topRightImg">
+                        <p><img data-ng-src="{{ getImage(i.id) }}" class="img-responsive nav" alt="profile, wishlist, cart" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hidden-xs hidden-sm greyNav">
+            <div class="col-md-10">
+                <div class="row">
+                    <div class="col-md-1" data-ng-repeat="n in nav">
+                        <p>{{n}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 myStyle3">
+                <p>SALE</p>
+            </div>
+        </div>
+
+        <div class="row hidden-xs hidden-sm myStyle6">
+            <div class="col-md-4">
+                <p><img data-ng-src="{{ getImage(6) }}" class="img-responsive nav2" alt="img" src="#"/>ZALORA NOW: UNLIMITED NEXT DAY DELIVERY</p>
+            </div>
+            <div class="col-md-2" data-ng-repeat="n in nav2">
+                <p><img data-ng-src="{{ getImage(n.id) }}" class="img-responsive nav3" alt="alt" src="#"/>{{n.text}}</p>
+            </div>
+            <div class="col-md-4">
+                <p><img data-ng-src="{{ getImage(9) }}" class="img-responsive nav4" alt="img" src="#"/></p>
+            </div>
+        </div>
+
+        <br class="hidden-xs hidden-sm" />
+
+        <div class="row">
+            <div class="col-md-12  hidden-xs hidden-sm">
+                <div class="jumbotron">
+                    <p><img data-ng-src="{{ getImage(10) }}" class="img-responsive" alt="main product banner" src="#"/></p>
+                </div>
+            </div>
+            <div class="hidden-md hidden-lg">
+                <p><img data-ng-src="{{ getImage(82)}}" class="img-responsive" alt="main product banner for mobile" src="#"></p>
+            </div>
+        </div>
+        <br class="hidden-xs hidden-sm" />
+        <div class="row hidden-md hidden-lg shop-mobile">
+            <div class="col-xs-12">
+                <div class="row" data-ng-repeat="item in mainNavMobile">
+                    <div class="col-xs-12 myStyle">
+                        <p>{{item | uppercase}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hidden-md hidden-lg">
+            <div class="col-xs-12">
+                <div class="row" data-ng-repeat="item in brandsMobile">
+                    <div class="col-xs-12">
+                        <p><img data-ng-src="{{ getImage(item.id)}}" class="img-responsive brands-mobile" alt="brand image" src="#"></p><br />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p><img data-ng-src="{{getImage(16)}}" class="img-responsive brands-mobile" alt="explore more" src="#"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row hidden-xs hidden-sm group">
+            <div class="col-md-12">
+                <p><img data-ng-src="{{ getImage(11) }}" class="img-responsive nav" alt="banner" src="#"/></p>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm  group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(1)}}</p>
+                    </div>
+                </div>
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                    </ol>
+
+                    <div class="carousel-inner">
+                        <div class="row item active">
+                            <div class="col-md-3" data-ng-repeat="item in bestSeller">
+                                <data-product brand="{{item.brand}}" prodname="{{item.prodName}}" price="{{item.price}}" image="{{getImage(item.id)}}"></data-product>
+                            </div>
+                        </div>
+                        <div class="row item">
+                            <div class="col-md-3" data-ng-repeat="item in bestSeller2">
+                                <data-product brand="{{item.brand}}" prodname="{{item.prodName}}" price="{{item.price}}" image="{{getImage(item.id)}}"></data-product>
+                            </div>
+                        </div>
+                        <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="background:none">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#myCarousel" data-slide="next" style="background:none">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <br /><br />
+                <div class="row">
+                    <div class="col-md-12">
+                        <p><img data-ng-src="{{ getImage(16) }}" class="img-responsive explore" alt="explore more" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(2)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <p><img data-ng-src="{{ getImage(17) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                    <div class="col-md-7">
+                        <p><img data-ng-src="{{ getImage(18) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(3)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-7">
+                        <p><img data-ng-src="{{ getImage(19) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                    <div class="col-md-5">
+                        <p><img data-ng-src="{{ getImage(20) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-5">
+                        <p><img data-ng-src="{{ getImage(21) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                    <div class="col-md-7">
+                        <p><img data-ng-src="{{ getImage(22) }}" class="img-responsive justArrived" alt="image" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(4)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4" data-ng-repeat="brand in featuredBrands">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(brand.id) }}" class="img-responsive" alt="image" src="#"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p><img data-ng-src="{{ getImage(16) }}" class="img-responsive explore" alt="explore more" src="#"/></p>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm group">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(5)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="row" data-ng-repeat="item in shopCategoryCol1">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(item.id) }}" class="img-responsive" alt="image" src="#"/></p>
+                                <p class="heading">{{item.text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(56) }}" class="img-responsive" alt="image" src="#"/></p>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="heading">SHOP MODEST WEAR ></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row" data-ng-repeat="item in shopCategoryCol2">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(item.id) }}" class="img-responsive" alt="image" src="#"/></p>
+                                <p class="heading">{{item.text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" />
+
+    <div class="container">
+        <div class="row hidden-xs hidden-sm group">
+            <div class="col-md-12">
+                <p><img data-ng-src="{{ getImage(53) }}" class="img-responsive" alt="image" src="#"/></p>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <p class="heading">{{getHeading(6)}}
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <p>{{text}}</p>
+                <p>{{text2}}</p>
+                <p>{{text3}}</p>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" /><br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-md hidden-lg">
+        <div class="row">
+            <div class="col-xs-12">
+                <p><img data-ng-src="{{ getImage(87) }}" class="img-responsive download-app-mobile" alt="download app and get 25% off. use code ZLAPP" src="#"/></p>
+            </div>
+        </div>
+
+        <div class="row mobile">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-4" data-ng-repeat="item in mobileFooter">
+                        <p>{{item}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>{{mobileFooter2}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container hidden-xs hidden-sm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 brandAndSearch">
+                        <p class="heading">{{getHeading(7)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 brandAndSearch" data-ng-repeat="item in brands">
+                        <p data-ng-repeat="list in item.brandList">{{list}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 brandAndSearch">
+                        <p class="heading">{{getHeading(8)}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 brandAndSearch" data-ng-repeat="item in searches">
+                        <p data-ng-repeat="list in item.searchList">{{list}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2" data-ng-repeat="item in preFooter">
+                        <p class="heading">{{getHeading(item.headerid)}}</p>
+                    </div>
+                </div>
+                <br />
+                <div class="row">
+                    <div class="col-md-2">
+                        <p><img data-ng-src="{{ getImage(29) }}" class="img-responsive" alt="image" src="#"/></p>
+                    </div>
+                    <div class="col-md-2" data-ng-repeat="item in preFooterPhoto">
+                        <div class="row">
+                            <div class="col-md-6" data-ng-repeat="pic in item.photo">
+                                <p><img data-ng-src="{{ getImage(pic.num) }}" class="img-responsive preFooter" alt="image" src="#"/></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(52) }}" class="img-responsive" alt="image" src="#"/></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p data-ng-repeat="text in securityText">{{text}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br class="hidden-xs hidden-sm" />
+
+    <div class="container hidden-xs hidden-sm blackNav">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row footer">
+                    <div class="col-md-4">
+                        <p><img data-ng-src="{{ getImage(1) }}" class="img-responsive footerImg" alt="banner" src="#"/></p>
+                    </div>
+                    <div class="col-md-2" data-ng-repeat="item in footer">
+                        <p class="heading footerHeading">{{getHeading(item.headerid) | uppercase}}</p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="heading footerHeading2">{{getHeading(17) | uppercase}}</p>
+                    </div>
+                </div>
+                <div class="row footer">
+                    <div class="col-md-4">
+                        <p>{{brandDesc}}</p>
+                    </div>
+                    <div class="col-md-2" data-ng-repeat="item in footer">
+                        <p data-ng-repeat="list in item.textList">{{list}}</p><br />
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row" data-ng-repeat="item in newToZalora">
+                            <div class="col-md-12">
+                                <p>{{item.text}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p><img data-ng-src="{{ getImage(59) }}" class="img-responsive" alt="input box" src="#"/></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" data-ng-repeat="img in buttons">
+                                <p><img data-ng-src="{{ getImage(img.id) }}" class="img-responsive" alt="button" src="#"/></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br class="hidden-xs hidden-sm" />
+
+        <div class="row footer">
+            <div class="col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(18) | uppercase}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-1" data-ng-repeat="img in socialButtons">
+                        <p><img data-ng-src="{{ getImage(img.id) }}" class="img-responsive" alt="button" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="heading">{{getHeading(19) | uppercase}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6" data-ng-repeat="img in storeButtons">
+                        <p><img data-ng-src="{{ getImage(img.id) }}" class="img-responsive" alt="button" src="#"/></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row footer">
+            <div class="col-md-6" data-ng-repeat=" item in bottomFooter">
+                <div class="row">
+                    <div class="col-md-12" data-ng-repeat="txt in item.col1">
+                        <p>{{txt}}</p>
+                    </div>
+                    <div class="col-md-12 myStyle7" data-ng-repeat="txt in item.col2">
+                        <p>{{txt}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="disclaimer"><p>This website is a partial requirement for the completion of the unit COS30043 Interface Design and Development and was built for educational purposes only. Original site: <a href="https://www.zalora.com.my/women/">Zalora Malaysia</a></p></div>
+
+    <br />
+
+    <!-- jQuery – required for Bootstrap's JavaScript plugins) -->
+    <script src="bootstrap-3.4.1-dist/js/jquery.min.js"></script>
+    <noscript></noscript>
+    <!-- All Bootstrap plug-ins file -->
+    <script src="bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <noscript></noscript>
+    <!--Angular JS-->
+    <script src="bootstrap-3.4.1-dist/js/angular.min.js"></script>
+    <noscript></noscript>
+    <!--My Controller-->
+    <script src="app.js"></script>
+    <noscript></noscript>
+</body></html>
